@@ -8,6 +8,7 @@ A simple Expo React Native app for earning money by completing mobile tasks.
   - Walking step goals
   - Filling out surveys
 - Real-time stats for earnings, completed tasks, and tier level.
+- Upgraded wallet-style UI with progress bar, richer task cards, and completed history section.
 - Clean mobile-first UI.
 
 ## Run locally
