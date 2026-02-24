@@ -9,5 +9,6 @@
     ],
     "newArchEnabled": true,
     "jsEngine": "hermes"
+    "assetBundlePatterns": ["**/*"]
   }
 }

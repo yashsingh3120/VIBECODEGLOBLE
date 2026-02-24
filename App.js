@@ -17,6 +17,8 @@ const TASKS = [
     title: "Watch a 30s sponsored ad",
     payout: 0.25,
     duration: "00:30",
+    title: "Watch a 30s sponsored ad",
+    payout: 0.25,
     description: "Complete short video ads and earn instantly.",
   },
   {
@@ -26,6 +28,8 @@ const TASKS = [
     title: "Walk 2,000 steps",
     payout: 0.7,
     duration: "Today",
+    title: "Walk 2,000 steps",
+    payout: 0.7,
     description: "Track your movement and earn for every active day.",
   },
   {
@@ -35,6 +39,8 @@ const TASKS = [
     title: "Answer a 5 minute survey",
     payout: 1.15,
     duration: "05:00",
+    title: "Answer a 5 minute survey",
+    payout: 1.15,
     description: "Share your opinion to unlock bonus rewards.",
   },
   {
@@ -44,6 +50,8 @@ const TASKS = [
     title: "Watch 3 product clips",
     payout: 0.5,
     duration: "03:00",
+    title: "Watch 3 product clips",
+    payout: 0.5,
     description: "Finish all clips in one go for a bigger reward.",
   },
 ];
@@ -115,6 +123,15 @@ export default function App() {
           <StatCard label="Tier" value={getTier(earned)} />
           <StatCard label="Completed" value={`${completedTaskIds.length}`} />
           <StatCard label="Pending" value={`${pendingTasks.length}`} />
+        <Text style={styles.heading}>EarnMate</Text>
+        <Text style={styles.subheading}>
+          Complete quick tasks like ads, walking, and surveys to earn money.
+        </Text>
+
+        <View style={styles.statsRow}>
+          <StatCard label="Earned" value={formatMoney(earned)} />
+          <StatCard label="Completed" value={`${completedTaskIds.length}`} />
+          <StatCard label="Tier" value={getTier(earned)} />
         </View>
 
         <Text style={styles.sectionTitle}>Available Tasks</Text>
@@ -123,6 +140,7 @@ export default function App() {
             <Text style={styles.emptyStateTitle}>All tasks completed 🎉</Text>
             <Text style={styles.emptyStateDescription}>
               You completed every ad, walking, and survey task. New tasks arrive tomorrow.
+              Come back later for new earning opportunities.
             </Text>
           </View>
         ) : (
@@ -142,6 +160,17 @@ export default function App() {
 
               <Pressable style={styles.button} onPress={() => completeTask(task.id)}>
                 <Text style={styles.buttonText}>Complete task</Text>
+              <View style={styles.taskTopRow}>
+                <Text style={styles.taskType}>{task.type}</Text>
+                <Text style={styles.taskPayout}>{formatMoney(task.payout)}</Text>
+              </View>
+              <Text style={styles.taskTitle}>{task.title}</Text>
+              <Text style={styles.taskDescription}>{task.description}</Text>
+              <Pressable
+                style={styles.button}
+                onPress={() => completeTask(task.id)}
+              >
+                <Text style={styles.buttonText}>Mark as completed</Text>
               </Pressable>
             </View>
           ))
@@ -227,11 +256,30 @@ const styles = StyleSheet.create({
     color: "#dbeafe",
     fontSize: 11,
     fontWeight: "600",
+    backgroundColor: "#0f172a",
+  },
+  container: {
+    padding: 18,
+    paddingBottom: 32,
+  },
+  heading: {
+    color: "#f8fafc",
+    fontSize: 34,
+    fontWeight: "800",
+    marginTop: 12,
+  },
+  subheading: {
+    color: "#cbd5e1",
+    fontSize: 15,
+    lineHeight: 22,
+    marginTop: 8,
+    marginBottom: 18,
   },
   statsRow: {
     flexDirection: "row",
     gap: 10,
     marginBottom: 18,
+    marginBottom: 24,
   },
   statCard: {
     flex: 1,
@@ -239,6 +287,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#0f172a",
     borderWidth: 1,
     borderColor: "#1e293b",
+    backgroundColor: "#1e293b",
     padding: 12,
   },
   statLabel: {
@@ -249,6 +298,8 @@ const styles = StyleSheet.create({
     color: "#f8fafc",
     marginTop: 8,
     fontSize: 15,
+    marginTop: 6,
+    fontSize: 16,
     fontWeight: "700",
   },
   sectionTitle: {
@@ -277,6 +328,20 @@ const styles = StyleSheet.create({
   taskHeaderText: {
     flex: 1,
   },
+    fontWeight: "700",
+    marginBottom: 12,
+  },
+  taskCard: {
+    backgroundColor: "#1e293b",
+    borderRadius: 14,
+    padding: 14,
+    marginBottom: 12,
+  },
+  taskTopRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 8,
+  },
   taskType: {
     color: "#38bdf8",
     fontWeight: "700",
@@ -298,6 +363,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "700",
     marginBottom: 5,
+  taskPayout: {
+    color: "#22c55e",
+    fontWeight: "700",
+    fontSize: 15,
+  },
+  taskTitle: {
+    color: "#e2e8f0",
+    fontSize: 17,
+    fontWeight: "700",
+    marginBottom: 6,
   },
   taskDescription: {
     color: "#cbd5e1",
@@ -308,6 +383,11 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#2563eb",
     paddingVertical: 11,
+    marginBottom: 14,
+  },
+  button: {
+    backgroundColor: "#2563eb",
+    paddingVertical: 10,
     borderRadius: 10,
     alignItems: "center",
   },
@@ -322,6 +402,11 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     borderWidth: 1,
     borderColor: "#1e293b",
+  },
+  emptyState: {
+    marginTop: 4,
+    backgroundColor: "#1e293b",
+    borderRadius: 14,
     padding: 18,
   },
   emptyStateTitle: {

@@ -1,6 +1,7 @@
 # VIBECODEGLOBLE
 
 A simple Expo React Native app (Expo SDK 54) for earning money by completing mobile tasks.
+A simple Expo React Native app for earning money by completing mobile tasks.
 
 ## Features
 - Earn money by completing tasks like:
@@ -9,6 +10,7 @@ A simple Expo React Native app (Expo SDK 54) for earning money by completing mob
   - Filling out surveys
 - Real-time stats for earnings, completed tasks, and tier level.
 - Upgraded wallet-style UI with progress bar, richer task cards, and completed history section.
+- Clean mobile-first UI.
 
 ## Run locally
 1. Install dependencies:
