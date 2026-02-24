@@ -1,5 +1,6 @@
 # VIBECODEGLOBLE
 
+A simple Expo React Native app (Expo SDK 54) for earning money by completing mobile tasks.
 A simple Expo React Native app for earning money by completing mobile tasks.
 
 ## Features
