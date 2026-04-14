@@ -1,16 +1,12 @@
 # VIBECODEGLOBLE
 
-A simple Expo React Native app (Expo SDK 54) for earning money by completing mobile tasks.
-A simple Expo React Native app for earning money by completing mobile tasks.
+An Expo React Native app that acts as a practical **text-to-video toolkit**.
+It highlights strong open-source models and a production workflow for **1080p+ output quality**.
 
-## Features
-- Earn money by completing tasks like:
-  - Watching ads
-  - Walking step goals
-  - Filling out surveys
-- Real-time stats for earnings, completed tasks, and tier level.
-- Upgraded wallet-style UI with progress bar, richer task cards, and completed history section.
-- Clean mobile-first UI.
+## What this app includes
+- Curated open-source text-to-video model recommendations.
+- A simple 4-step pipeline for reliable 1080p and above delivery.
+- A reusable prompt template for higher-quality generations.
 
 ## Run locally
 1. Install dependencies:
@@ -21,4 +17,7 @@ A simple Expo React Native app for earning money by completing mobile tasks.
    ```bash
    npm start
    ```
-3. Open on Android/iOS via Expo Go.
+3. Open Android/iOS in Expo Go, or run web preview:
+   ```bash
+   npm run web
+   ```
